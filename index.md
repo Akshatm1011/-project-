@@ -1,5 +1,7 @@
 # Akshat Muir (akmuir@ucsd.edu)
-# B13 Misha Belkin and Yian Ma
+
+## B13 Misha Belkin and Yian Ma
+
 **What is the most interesting topic covered in your domain this quarter?**
 The topic I found the most interesting was seeing how the number of parameters can drastically affect the loss landscape when attempting to optimize the algorithm, especially the minima.
 **Describe a potential investigation you would like to pursue for your Quarter 2 Project.**
