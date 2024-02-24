@@ -1,4 +1,4 @@
-# Akshat Muir (akmuir@ucsd.edu)
+# Optimizing NanoGPT
 
 ## B13 Misha Belkin and Yian Ma
 
