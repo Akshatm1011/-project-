@@ -1,6 +1,6 @@
 # Optimizing NanoGPT
 
-## B13 Misha Belkin and Yian Ma
+## Can optimizing the squentropy loss function and adjusting pertinent hyperparameters improve baseline NanoGPT performance?
 
 **What is the most interesting topic covered in your domain this quarter?**
 The topic I found the most interesting was seeing how the number of parameters can drastically affect the loss landscape when attempting to optimize the algorithm, especially the minima.
