@@ -16,7 +16,7 @@ can be improved. In our case we will be using mean squared error loss
 in conjunction with cross-entropy loss to create Squentropy.
 
 **Mathematical Foundations**
-
+$$
 \begin{block}{Mathematical Basics}
         \rmfamily{
         Squentropy loss is a hybrid loss function that combines aspects of cross entropy and mean squared error.  
@@ -45,6 +45,7 @@ in conjunction with cross-entropy loss to create Squentropy.
 
         The squared loss portion of $L_{squen}$ acts as a \textit{regularization} term.
         }
+        $$
 
 **Methods**
 
