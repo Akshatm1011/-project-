@@ -20,10 +20,10 @@ Squentropy loss is a hybrid loss function that combines aspects of cross entropy
         
 Consider the following notation:
 
-* Let $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ denote the dataset sampled from a joint distribution $D(X , Y)$. 
-* For each sample $i,  x_i \in X$ is the input and $y_i \in Y = \{1, 2, . . . , C\}$ is the true class label. The one-hot encoding label used for training is $e_{y_{i}} = [0, ..., 1, ..., 0] \in \mathbb{R}^C$. 
-* Let $f(x_i) \in \mathbb{R}$ denote the logits (output of last linear layer) of a neural network of input $x_i$, with components $f_j(x_i)$, $j = \{1, 2, . . . , C\}$.
-* Let $p_{i,j} = \frac{e^{f_j(x_i)}}{\sum_{j=1}^C f_{j}(x_{i})^{2}}$ denote the predicted probability of $x_i$ to be in class $j$.  
+Let $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ denote the dataset sampled from a joint distribution $D(X , Y)$. 
+For each sample $i,  x_i \in X$ is the input and $y_i \in Y = \{1, 2, . . . , C\}$ is the true class label. The one-hot encoding label used for training is $e_{y_{i}} = [0, ..., 1, ..., 0] \in \mathbb{R}^C$. 
+Let $f(x_i) \in \mathbb{R}$ denote the logits (output of last linear layer) of a neural network of input $x_i$, with components $f_j(x_i)$, $j = \{1, 2, . . . , C\}$.
+Let $p_{i,j} = \frac{e^{f_j(x_i)}}{\sum_{j=1}^C f_{j}(x_{i})^{2}}$ denote the predicted probability of $x_i$ to be in class $j$.  
 
 Then the squentropy loss function on a single sample $x_i$
 is defined as follows:
