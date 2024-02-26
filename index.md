@@ -15,7 +15,8 @@ a more robust loss function and see if the performance of the model
 can be improved. In our case we will be using mean squared error loss
 in conjunction with cross-entropy loss to create Squentropy.
 
-**Mathematical Foundations**
+**Mathematical Foundations**  
+
 Squentropy loss is a hybrid loss function that combines aspects of cross entropy and mean squared error.  
         
 Consider the following notation:
