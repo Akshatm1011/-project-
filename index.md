@@ -8,7 +8,7 @@ Large Language Models have typically been trained on the
 cross-entropy loss function due to its effectiveness 
 in classification properties. However, the benefits of using 
 regression-based loss functions should not be underestimated
-when it comes to performance. Our project proposes to combine 
+when it comes to performance. Our project proposes to combine
 the benefits that come with regression-based loss functions with 
 the practicality of classification-based loss functions to create
 a more robust loss function and see if the performance of the model
@@ -129,7 +129,7 @@ Squentropy loss function to be seen.
 **Conclusions and Outlook**
 
 Since the perplexity of the Squentropy trained model
-was ... this indicates that although our new model
+was 3.1 this indicates that although our new model
 comes close to the results of a Cross-entropy trained
 model, it does not supersede them. In addition, the
 text output of the Squentropy model was a lot less
