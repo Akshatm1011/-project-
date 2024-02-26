@@ -31,7 +31,6 @@ is defined as follows:
 $$
 \begin{equation*}
     L_{squen}(x_{i}, y_{i})  = -\log p_{i, y_{i}}(x_{i}) + \frac{1}{C - 1}{ \sum_{j=1, j \neq y_{i}}^C f_{j}(x_{i})^{2}}
-    \label{eq:kmeans}
 \end{equation*}
 $$
 
