@@ -129,7 +129,7 @@ Squentropy loss function to be seen.
 **Conclusions and Outlook**
 
 Since the perplexity of the Squentropy trained model
-was ... this indicates that although our new model
+was 3.1 this indicates that although our new model
 comes close to the results of a Cross-entropy trained
 model, it does not supersede them. In addition, the
 text output of the Squentropy model was a lot less
