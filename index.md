@@ -16,36 +16,27 @@ can be improved. In our case we will be using mean squared error loss
 in conjunction with cross-entropy loss to create Squentropy.
 
 **Mathematical Foundations**
-$$
-\begin{block}{Mathematical Basics}
-        \rmfamily{
-        Squentropy loss is a hybrid loss function that combines aspects of cross entropy and mean squared error.  
-        \vskip2ex
-        Consider the following notation:
-        \vskip2ex
-
-        \begin{itemize}
-
-            \item Let $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ denote the dataset sampled from a joint distribution $D(X , Y)$. 
-            \item For each sample $i,  x_i \in X$ is the input and $y_i \in Y = \{1, 2, . . . , C\}$ is the true class label. The one-hot encoding label used for training is $e_{y_{i}} = [0, ..., 1, ..., 0] \in \mathbb{R}^C$. 
-            \item Let $f(x_i) \in \mathbb{R}$ denote the logits (output of last linear layer) of a neural network of input $x_i$, with components $f_j(x_i)$, $j = \{1, 2, . . . , C\}$.
-            \item Let $p_{i,j} = \frac{e^{f_j(x_i)}}{\sum_{j=1}^C f_{j}(x_{i})^{2}}$ denote the predicted probability of $x_i$ to be in class $j$.  
-
-        \end{itemize}
-    
-        Then the squentropy loss function on a single sample $x_i$
-        is defined as follows:
+Squentropy loss is a hybrid loss function that combines aspects of cross entropy and mean squared error.  
         
-        \begin{equation*}
-            L_{squen}(x_{i}, y_{i})  = -\log p_{i, y_{i}}(x_{i}) + \frac{1}{C - 1}{ \sum_{j=1, j \neq y_{i}}^C f_{j}(x_{i})^{2}}
-            \label{eq:kmeans}
-        \end{equation*}
+Consider the following notation:
 
-        \vskip1ex
+Let $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ denote the dataset sampled from a joint distribution $D(X , Y)$. 
+For each sample $i,  x_i \in X$ is the input and $y_i \in Y = \{1, 2, . . . , C\}$ is the true class label. The one-hot encoding label used for training is $e_{y_{i}} = [0, ..., 1, ..., 0] \in \mathbb{R}^C$. 
+Let $f(x_i) \in \mathbb{R}$ denote the logits (output of last linear layer) of a neural network of input $x_i$, with components $f_j(x_i)$, $j = \{1, 2, . . . , C\}$.
+Let $p_{i,j} = \frac{e^{f_j(x_i)}}{\sum_{j=1}^C f_{j}(x_{i})^{2}}$ denote the predicted probability of $x_i$ to be in class $j$.  
 
-        The squared loss portion of $L_{squen}$ acts as a \textit{regularization} term.
-        }
-        $$
+Then the squentropy loss function on a single sample $x_i$
+is defined as follows:
+
+$$
+\begin{equation*}
+    L_{squen}(x_{i}, y_{i})  = -\log p_{i, y_{i}}(x_{i}) + \frac{1}{C - 1}{ \sum_{j=1, j \neq y_{i}}^C f_{j}(x_{i})^{2}}
+    \label{eq:kmeans}
+\end{equation*}
+$$
+
+The squared loss portion of $L_{squen}$ acts as a $\textit{regularization}$ term.
+
 
 **Methods**
 
