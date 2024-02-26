@@ -1,4 +1,4 @@
-# Optimizing NanoGPT
+# Enhancing NanoGPT: Squentropy Loss and Hyperparameter Tuning!
 
 ## Can optimizing the squentropy loss function and adjusting pertinent hyperparameters improve baseline NanoGPT performance?
 
@@ -14,6 +14,37 @@ the practicality of classification-based loss functions to create
 a more robust loss function and see if the performance of the model
 can be improved. In our case we will be using mean squared error loss
 in conjunction with cross-entropy loss to create Squentropy.
+
+**Mathematical Foundations**
+
+\begin{block}{Mathematical Basics}
+        \rmfamily{
+        Squentropy loss is a hybrid loss function that combines aspects of cross entropy and mean squared error.  
+        \vskip2ex
+        Consider the following notation:
+        \vskip2ex
+
+        \begin{itemize}
+
+            \item Let $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ denote the dataset sampled from a joint distribution $D(X , Y)$. 
+            \item For each sample $i,  x_i \in X$ is the input and $y_i \in Y = \{1, 2, . . . , C\}$ is the true class label. The one-hot encoding label used for training is $e_{y_{i}} = [0, ..., 1, ..., 0] \in \mathbb{R}^C$. 
+            \item Let $f(x_i) \in \mathbb{R}$ denote the logits (output of last linear layer) of a neural network of input $x_i$, with components $f_j(x_i)$, $j = \{1, 2, . . . , C\}$.
+            \item Let $p_{i,j} = \frac{e^{f_j(x_i)}}{\sum_{j=1}^C f_{j}(x_{i})^{2}}$ denote the predicted probability of $x_i$ to be in class $j$.  
+
+        \end{itemize}
+    
+        Then the squentropy loss function on a single sample $x_i$
+        is defined as follows:
+        
+        \begin{equation*}
+            L_{squen}(x_{i}, y_{i})  = -\log p_{i, y_{i}}(x_{i}) + \frac{1}{C - 1}{ \sum_{j=1, j \neq y_{i}}^C f_{j}(x_{i})^{2}}
+            \label{eq:kmeans}
+        \end{equation*}
+
+        \vskip1ex
+
+        The squared loss portion of $L_{squen}$ acts as a \textit{regularization} term.
+        }
 
 **Methods**
 
@@ -39,10 +70,12 @@ states that the current set of hyperparameters utilized
 are have not been tuned for optimal performance! 
 We have decided to focus on the learning
 rate, dropout percentage, and number of layers in
-the neural network. Here are their potential values:
-• Lr - 3
-• Batch Size - 10
-• max_iter - 100
+the neural network. Here are their potential values:  
+• Lr - 3  
+
+• Batch Size - 10  
+
+• max_iter - 100  
 
 **Cross Entropy Baseline**
 
