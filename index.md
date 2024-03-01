@@ -1,7 +1,9 @@
 # Enhancing NanoGPT: Squentropy Loss and Hyperparameter Tuning!
 
 ## Can optimizing the squentropy loss function and adjusting pertinent hyperparameters improve baseline NanoGPT performance?
-<sub style="text-align: center">Akshat Muir (akmuir@ucsd.edu) </sub>
+<div style = "text align:center;">
+<sub>Akshat Muir (akmuir@ucsd.edu) </sub>
+</div>
 <br>
 **Introduction**
 
