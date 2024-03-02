@@ -1,7 +1,7 @@
 <center>
 <sub>Group Members:</sub> <br>
-<sub>Akshat Muir (akmuir@ucsd.edu) Sujay Talanki (stalanki@ucsd.edu) Rehan Ali (rmali@ucsd.edu) Sujen Kancherla (skancherla@ucsd.edu)</sub> <br>
-<sub>Project Mentors: Misha Belkin (mbelkin@ucsd.edu) Yian Ma (yianma@ucsd.edu)</sub>
+<sub>Akshat Muir (akmuir@ucsd.edu), Sujay Talanki (stalanki@ucsd.edu), Rehan Ali (rmali@ucsd.edu), Sujen Kancherla (skancherla@ucsd.edu)</sub> <br>
+<sub>Project Mentors: Misha Belkin (mbelkin@ucsd.edu), Yian Ma (yianma@ucsd.edu)</sub>
 </center>
 # Enhancing NanoGPT: Squentropy Loss and Hyperparameter Tuning!
 
