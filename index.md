@@ -42,6 +42,8 @@ $$
 
 The squared loss portion of $L_{squen}$ acts as a $\textit{regularization}$ term.
 
+![](latex.png)
+
 **Methods**
 
 We first started with simply using Mean Squared error in place of
