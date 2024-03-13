@@ -4,8 +4,6 @@
 <sub>Project Mentors: Misha Belkin (mbelkin@ucsd.edu), Yian Ma (yianma@ucsd.edu)</sub>
 </center>
 
-## Can we improve NanoGPT performance via optimizing the squentropy loss function and tuning relevant hyperparameters?
-
 **Introduction**
 
 Large Language Models have typically been trained on the 
