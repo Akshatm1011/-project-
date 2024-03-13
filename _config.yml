@@ -1,9 +1,5 @@
 remote_theme: pages-themes/cayman@v0.2.0
 title: Enhancing NanoGPT via Squentropy Loss and Hyperparameter Tuning
-description: |
-  This is a multiline description  
-  for my awesome website. It can span  
-  multiple lines, and you can use  
-  indentation for readability.  
+description: Can we improve NanoGPT performance via optimizing the squentropy loss function and tuning relevant hyperparameters?
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
