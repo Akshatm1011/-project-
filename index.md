@@ -42,6 +42,10 @@ $$
 
 The squared loss portion of $L_{squen}$ acts as a $\textit{regularization}$ term.
 
+<div>
+    \( L_{squen}(x_{i}, y_{i}) = -\log p_{i, y_{i}}(x_{i}) + \frac{1}{C - 1}{ \sum_{j=1, j \neq y_{i}}^C f_{j}(x_{i})^{2}} \)
+</div>
+
 
 **Methods**
 
