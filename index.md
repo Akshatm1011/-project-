@@ -68,11 +68,11 @@ are have not been tuned for optimal performance!
 We have decided to focus on the learning
 rate, dropout percentage, and number of layers in
 the neural network. Here are their potential values:  
-• Lr - 3  
+• Lr - $3$  
 
-• Batch Size - 10  
+• Batch Size - $10$
 
-• max_iter - 100  
+• max_iter - $100$  
 
 **Cross Entropy Baseline**
 
