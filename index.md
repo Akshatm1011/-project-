@@ -41,7 +41,6 @@ mean squared error and cross-entropy to get the best results
 so far in terms of intelligibility but are in the process of 
 tuning hyperparameters to increase intelligibility.
 
-
 **Hyperparameter Tuning**
 
 Andrej Kaparthy (creator of the NanoGPT repo)
@@ -54,7 +53,17 @@ the neural network. Here are their potential values:
 
 • Batch Size - $10$
 
-• max_iter - $100$  
+• max_iter - $100$
+
+**Perplexity Measurement**
+
+Upon completion of the training, perplexity was measured using a separate script. Perplexity
+measures how well a language model predicts or understands a given set
+of data, typically a sequence of words or tokens. The lower the perplex-
+ity, the better the model is at making accurate predictions. It quantifies how surprised or
+”perplexed” the model would be on average when seeing a new word. The script calculated
+the perplexity for each story in the dataset, providing a comprehensive view of the model’s
+performance.
 
 **Cross Entropy Baseline**
 
