@@ -46,14 +46,16 @@ tuning hyperparameters to increase intelligibility.
 Andrej Kaparthy (creator of the NanoGPT repo)
 states that the current set of hyperparameters utilized 
 are have not been tuned for optimal performance! 
-We have decided to focus on the learning
-rate, dropout percentage, and number of layers in
-the neural network. Here are their potential values:  
-• Lr - 3
+The hyperparameters given to us are initially set to be 
+somewhat optimal for cross entropy with a reasonable perplexity.
+We used multiple iterations of training the model over different 
+combinations of hyperparameters to tune the model that used squentropy 
+to train it. The most optimal hyperparameters found for squentropy are written below.
+• Lr - 0.00006
 
-• Batch Size - 10
+• Number of Layers - 16
 
-• max_iter - 100
+• dropout - 0.1
 
 **Perplexity Measurement**
 
@@ -83,6 +85,12 @@ conflict as well as an ending/cliamx. The cross entropy
 loss allowed the model to pick up the nuances in the
 training data and text.
 
+# Validation Loss for Cross Entropy
+
+<p align="center">
+  <img src="cross_entropy.png" alt="Validation Loss for cross entropy">
+</p>
+
 **Main Result**
 
 Since we were able to train NanoGPT with a novel loss
@@ -101,6 +109,17 @@ can not only match but potentially exceed the performance of
 traditional loss functions in specific scenarios, 
 suggesting a promising area for further investigation 
 and application in the field of natural language processing.
+
+# Validation Loss for Squentropy
+
+After tuning the hyperparameters with the squentropy loss, 
+we were able to get a model to converge at around 2.0 from 
+starting at 11 in the loss value. The performance on the test 
+during training is below.
+
+<p align="center">
+  <img src="squentropy.png" alt="Validation Loss for suentropy">
+</p>
 
 **Generalization**
 
