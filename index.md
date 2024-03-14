@@ -74,9 +74,9 @@ of hyperparameter values within our defined search space.
 
 Search space:
 
-learning_rates = [0.000006, 0.0006, 0.06]
-dropouts = [0.0, 0.1, 0.2]
-n_layers = [8, 12, 16]
+learning_rates = [0.000006, 0.0006, 0.06] <br>
+dropouts = [0.0, 0.1, 0.2] <br>
+n_layers = [8, 12, 16] <br>
 
 We chose the model with the hyperparameters that resulted in the lowest perplexity metric.
 The most optimal hyperparameters found for squentropy are written below.
