@@ -107,6 +107,7 @@ The formula is shown below:
 
 Consider the following notation:
 
+$$
 \begin{itemize}
  \item $N$ is the number of tokens in the test set 
  \item $w_{i}$ represents the i-th word in the test set
@@ -119,6 +120,7 @@ Then, the \textit{perplexity} is defined as:
 P(w) = exp( \frac{-1}{N} \sum_{i=1}^N \log P(w_{i}|w_1, w_2, ..., w_{i-1})) \\
 \label{eq:perplexity}
 \end{equation}
+$$
 
 ![](perplexity.png)
 
