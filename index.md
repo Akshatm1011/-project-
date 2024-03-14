@@ -6,16 +6,23 @@
 
 **Introduction**
 
-Large Language Models have typically been trained on the 
-cross-entropy loss function due to its effectiveness 
-in classification properties. However, the benefits of using 
-regression-based loss functions should not be underestimated
-when it comes to performance. Our project proposes to combine
-the benefits that come with regression-based loss functions with 
-the practicality of classification-based loss functions to create
-a more robust loss function and see if the performance of the model
-can be improved. In our case we will be using mean squared error loss
-in conjunction with cross-entropy loss to create Squentropy.
+In the context of LLM’s, there has been a growing interest in improving the performance
+of compact models such as NanoGPT. These models not only aim to generate coherent text
+but also strive to optimize resource utilization in text generation tasks. We are interested in
+optimizing NanoGPT’s performance; we will particularly focus on the loss function that the
+model attempts to minimize and hyperparameters that can be tuned. In machine learning,
+a model makes a prediction by choosing the input that minimizes a loss function. LLM’s
+traditionally use cross entropy Loss function, primarily because it is well-suited for tasks
+that generate probabilistic predictions (and classification tasks in general). The MSE loss
+function is typically utilized for regression tasks (It uses the residuals- the error between
+the predicted value and the actual value.). However, there is a way to utilize the MSE loss
+function for our application. It involves predicting the next token in the sequence (choosing
+the token with the maximum probability of occurring) and comparing this token to the
+actual token. These residuals will be computed through vector algebra, and inputted into
+the loss function to compute a final metric. The goal is to implement this mathematical
+transformation into code, and evaluate the result on our dataset to see if the model performs
+better. This research aims to contribute to both the advancement of NanoGPT and other
+large language models in the field of natural language processing.
 
 **Mathematical Foundations**  
 
@@ -43,14 +50,21 @@ tuned our model to be even more intelligibile.
 
 **Hyperparameter Tuning**
 
-Andrej Kaparthy (creator of the NanoGPT repo)
-states that the current set of hyperparameters utilized 
-are have not been tuned for optimal performance! 
-The hyperparameters given to us are initially set to be 
-somewhat optimal for cross entropy with a reasonable perplexity.
-We used multiple iterations of training the model over different 
-combinations of hyperparameters to tune the model that used squentropy 
-to train it. The most optimal hyperparameters found for squentropy are written below.
+LLM performance can be improved by choosing the optimal hyperparameters in the training
+process (via hyperparameter tuning). For our purposes, we chose to change the learning
+rate, number of layers in the model, and the dropout rate. Using our hyperparameter tuning
+script, we implemented a grid search: exhaustively search all possible combinations
+of hyperparameter values within our defined search space.
+
+Search space:
+
+learning_rates = [0.000006, 0.0006, 0.06]
+dropouts = [0.0, 0.1, 0.2]
+n_layers = [8, 12, 16]
+
+We chose the model with the hyperparameters that resulted in the lowest perplexity metric.
+The most optimal hyperparameters found for squentropy are written below.
+
 • Lr - 0.00006
 
 • Number of Layers - 16
@@ -65,7 +79,6 @@ from itertools import product
 learning_rates = [0.000006,0.0006,0.06]
 dropouts = [0.0, 0.1, 0.2]
 n_layers = [8, 12, 16]
-
 
 params = list(product(learning_rates, dropouts, n_layers))
 path = os.getcwd().split('/')[:3]
@@ -83,13 +96,29 @@ for lr, dropout, n_layer in params:
 
 **Perplexity Measurement**
 
-Upon completion of the training, perplexity was measured using a separate script. Perplexity
-measures how well a language model predicts or understands a given set
-of data, typically a sequence of words or tokens. The lower the perplex-
-ity, the better the model will be at making accurate predictions. It quantifies how surprised or
-”perplexed” the model would be on average when seeing a new word. The script calculated
-the perplexity for each story in the dataset, providing a comprehensive view of the model’s
-performance.
+Upon completion of the training, perplexity was measured using a separate script. 
+Perplexity measures how well a language model predicts or understands a given setof data,
+typically a sequence of words or tokens. The lower the perplexity, the better the model is
+at making accurate predictions. It quantifies how surprised or "perplexed" the model would 
+be on average when seeing a new word. The script calculated the perplexity for each story in 
+the dataset, providing a comprehensive view of the model's performance.  
+
+The formula is shown below:  
+
+Consider the following notation:
+
+\begin{itemize}
+ \item $N$ is the number of tokens in the test set 
+ \item $w_{i}$ represents the i-th word in the test set
+ \item $P(w_{i}|w_1, w_2, ..., w_{i-1})$ is the probability assigned by the language model to the i-th token given the previous words
+\end{itemize}
+
+Then, the \textit{perplexity} is defined as: 
+
+\begin{equation}
+P(w) = exp( \frac{-1}{N} \sum_{i=1}^N \log P(w_{i}|w_1, w_2, ..., w_{i-1})) \\
+\label{eq:perplexity}
+\end{equation}
 
 ![](perplexity.png)
 
@@ -126,7 +155,6 @@ def mse_loss(targets_expanded, logits):
 
 loss = mse_loss_value + cross_entropy_loss
 ```
-
 
 **Validation Loss for Squentropy**
 
