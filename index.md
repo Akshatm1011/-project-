@@ -191,26 +191,6 @@ during training is below.
   <img src="squentropy.png" alt="Validation Loss for suentropy">
 </p>
 
-**Main Result**
-
-Since we were able to train NanoGPT with a novel loss
-function not designed for NLP Tasks, we can say
-that MSE, Squentropy, and other novel loss func-
-tions could be potential avenues to explore for an
-LLM. Moreover, the adaptability of these models to
-alternative loss functions opens up new research 
-directions, potentially leading to more robust language
-understanding and generation capabilities. As seen
-in the Squentropy Best Performance section, we were
-able to match the performance of cross entropy to
-squentropy (with a perplexity of 3.1). This aligns
-with our hypothesis that alternative loss functions
-can not only match but potentially exceed the performance of 
-traditional loss functions in specific scenarios, 
-suggesting a promising area for further investigation 
-and application in the field of natural language processing.
-
-
 **Model-Generated Stories**
 
 After extensive training and hyperparameter tuning with our novel Squentropy loss, the model was 
