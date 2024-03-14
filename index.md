@@ -107,17 +107,7 @@ The formula is shown below:
 
 Consider the following notation:
 
-* $N$ is the number of tokens in the test set 
-* $w_{i}$ represents the i-th word in the test set
-* $P(w_{i}|w_1, w_2, ..., w_{i-1})$ is the probability assigned by the language model to the i-th token given the previous words
-
-Then, the $\textit{perplexity}$ is defined as: 
-
-$$
-\begin{equation}
-P(w) = exp( \frac{-1}{N} \sum_{i=1}^N \log P(w_{i}|w_1, w_2, ..., w_{i-1})) \\
-\end{equation}
-$$
+![](perplexityequation.png)
 
 **Cross Entropy Baseline**
 
