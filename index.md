@@ -57,6 +57,30 @@ to train it. The most optimal hyperparameters found for squentropy are written b
 
 • dropout - 0.1
 
+**Script For Tuning**
+```python
+import os
+from itertools import product
+
+learning_rates = [0.000006,0.0006,0.06]
+dropouts = [0.0, 0.1, 0.2]
+n_layers = [8, 12, 16]
+
+
+params = list(product(learning_rates, dropouts, n_layers))
+path = os.getcwd().split('/')[:3]
+path += ['teams', 'b13', 'group1']
+out = os.path.join(*path)
+
+counter = 0
+for lr, dropout, n_layer in params:
+    command = f'python3 train.py --compile=False --wandb_log=True --out_dir={out} --batch_size=4 --max_iters=50 --eval_interval=50 --loss_func="squentropy" --learning_rate={lr:.9f} --min_lr={lr/10:.9f} --dropout={dropout} --n_layer={n_layer} --ckpt_name=ckpt{counter}.pt'
+    #print(command)
+    os.system(command)
+    
+    counter += 1
+```
+
 **Perplexity Measurement**
 
 Upon completion of the training, perplexity was measured using a separate script. Perplexity
@@ -91,6 +115,30 @@ training data and text.
   <img src="cross_entropy.png" alt="Validation Loss for cross entropy">
 </p>
 
+**Squentropy Loss Code**
+```python
+def mse_loss(targets_expanded, logits):
+    squared_error = (targets_expanded - logits)**2
+    targets = targets_expanded == 1
+    squared_error = torch.where(targets, squared_error * 65, squared_error)
+    mse_loss = torch.mean(squared_error)
+    return mse_loss
+
+loss = mse_loss_value + cross_entropy_loss
+```
+
+
+**Validation Loss for Squentropy**
+
+After tuning the hyperparameters with the squentropy loss, 
+we were able to get a model to converge at around 2.0 from 
+starting at 11 in the loss value. The performance on the test 
+during training is below.
+
+<p align="center">
+  <img src="squentropy.png" alt="Validation Loss for suentropy">
+</p>
+
 **Main Result**
 
 Since we were able to train NanoGPT with a novel loss
@@ -109,17 +157,6 @@ can not only match but potentially exceed the performance of
 traditional loss functions in specific scenarios, 
 suggesting a promising area for further investigation 
 and application in the field of natural language processing.
-
-**Validation Loss for Squentropy**
-
-After tuning the hyperparameters with the squentropy loss, 
-we were able to get a model to converge at around 2.0 from 
-starting at 11 in the loss value. The performance on the test 
-during training is below.
-
-<p align="center">
-  <img src="squentropy.png" alt="Validation Loss for suentropy">
-</p>
 
 
 **Model-Generated Stories**
