@@ -191,6 +191,14 @@ during training is below.
   <img src="squentropy.png" alt="Validation Loss for suentropy">
 </p>
 
+**Final Metrics for each Model**
+
+|      Method     | Cross Entropy Loss | Squentropy Loss (with Optimized Hyperparameters |
+|-----------------|--------------------|-------------------------------------------------|
+|    Train Loss   |        1.81        |                      1.89                       |
+|     Test Loss   |        1.83        |                      1.90                       |
+| Test Perplexity |         3.8        |                      5.2                        |
+
 **Model-Generated Stories**
 
 After extensive training and hyperparameter tuning with our novel Squentropy loss, the model was 
