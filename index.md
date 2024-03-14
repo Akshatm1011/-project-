@@ -24,6 +24,10 @@ transformation into code, and evaluate the result on our dataset to see if the m
 better. This research aims to contribute to both the advancement of NanoGPT and other
 large language models in the field of natural language processing.
 
+**Dataset Description**
+
+There are multiple datasets that we would like to explore, but we will be using TinyStories. This dataset has 2.1M rows; each row consists of a short, structured narrative. This dataset differs from most datasets, as there is technically only one independent variable (the input paragraph). The data does not need to be necessarily cleaned (some grammar or punctuation might need to be handled, but nothing that requires too much attention). During the preparation process, the code utilizes tokenizers, transformers, and deep learning techniques to generate output text based on the input. The choice of dataset is actually not too important for this task, as there are many datasets of raw text data that can be used for NanoGPT training. However, the TinyStories dataset works particularly well because the dataset is large and contains many tokens that can be used in training. As far as limitations go, this dataset takes approximately 1 day to train when using a singular node with a singular GPU. (Runtime will be significantly reduced if we use Distributed Parallel Computing methods.) Even for our small scale NanoGPT infrastructure, running the model on this dataset requires much processing time.
+
 **Mathematical Foundations**  
 
 Squentropy loss is a hybrid loss function that combines aspects of cross entropy and mean squared error.  
