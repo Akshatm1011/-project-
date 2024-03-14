@@ -223,18 +223,7 @@ Squentropy loss function to be seen.
 
 **Conclusions and Outlook**
 
-Since the perplexity of the Squentropy trained model
-was 3.1 this indicates that although our new model
-comes close to the results of a Cross-entropy trained
-model, it does not supersede them. In addition, the
-text output of the Squentropy model was a lot less
-intelligible than that of the Cross-entropy model.
-The future implications of our findings, although not
-exactly superseding the results compared to cross 
-entropy, show that there may be future loss functions
-combined with cross entropy that could yield similar
-results or improve upon our findings to generate a
-more accurate loss function than cross entropy itself.
+The current state of modern machine learning and natural language processing is centered around large language models. ChatGPT has revolutionized the industry, and has directed the focus of AI towards LLM research and optimization. These recent events have inspired us to improve upon NanoGPT's (A remake of ChatGPT-2 but on a smaller scale) performance. The loss function that the model attempts to minimize plays a huge role in model performance. Current research on the topic suggests that the Cross Entropy Loss function performs optimally, as it is suited for classification tasks and probabilistic predictions. Nonetheless, we attempted to implement the Squentropy Error loss function. Based on the cross entropy model's perplexity (a popular metric when measuring the performance of an LLM), it is apparent that its loss function leads to significantly better performance compared to that of Squentropy. The perplexity of the Squentropy model was 5.2 while that of cross-entropy was 3.8. Although our attempt to optimize NanoGPT through a change in the loss function was futile, it seems that the model could be significantly improved via tuning other hyperparameters (Batch Size, Step Size, etc.), apart form the hyperparameters that we have already tuned. Furthermore, other regression-based loss functions such as Absolute Error, Logistic Error, etc. can be combined with Cross entropy to see if a lower perplexity or training loss values can be achieved. This idea can be explored in future research in regards to LLMs.
 
 **References**
 
