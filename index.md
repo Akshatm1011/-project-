@@ -251,8 +251,8 @@ The current state of machine learning and natural language processing is heavily
 
 **References**
 
-Eldan, Ronen. 2023. "TinyStories." Hugging Face. [Link](https://huggingface.co/datasets/roneneldan/TinyStories)
-Karparthy, Andrej. 2023. "nanoGPT." GitHub. [Link](https://github.com/karpathy/nanoGPT)
+Eldan, Ronen. 2023. "TinyStories." Hugging Face. [Link](https://huggingface.co/datasets/roneneldan/TinyStories) <br>
+Karparthy, Andrej. 2023. "nanoGPT." GitHub. [Link](https://github.com/karpathy/nanoGPT) <br>
 Like Hui, Stephen Wright, Mikhail Belkin. 2023. "Cut your Losses with Squentropy."
-Cornell University. [Link](https://arxiv.org/pdf/2302.03952.pdf)
-Madiraju, Priyanka. 2022. "Perplexity of Language Models." Medium. [Link](https://arxiv.org/pdf/2302.03952.pdf)https://arxiv.org/pdf/2302.03952.pdf
+Cornell University. [Link](https://arxiv.org/pdf/2302.03952.pdf) <br>
+Madiraju, Priyanka. 2022. "Perplexity of Language Models." Medium. [Link](https://arxiv.org/pdf/2302.03952.pdf)
