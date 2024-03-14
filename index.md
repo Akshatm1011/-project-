@@ -36,6 +36,18 @@ Consider the following notation:
 
 ![](latex.png)
 
+**Squentropy Loss Code**
+```python
+def mse_loss(targets_expanded, logits):
+    squared_error = (targets_expanded - logits)**2
+    targets = targets_expanded == 1
+    squared_error = torch.where(targets, squared_error * 65, squared_error)
+    mse_loss = torch.mean(squared_error)
+    return mse_loss
+
+loss = mse_loss_value + cross_entropy_loss
+```
+
 **Methods**
 
 We first started with simply using Mean Squared error in place of
@@ -167,18 +179,6 @@ training data and text.
 <p align="center">
   <img src="cross_entropy.png" alt="Validation Loss for cross entropy">
 </p>
-
-**Squentropy Loss Code**
-```python
-def mse_loss(targets_expanded, logits):
-    squared_error = (targets_expanded - logits)**2
-    targets = targets_expanded == 1
-    squared_error = torch.where(targets, squared_error * 65, squared_error)
-    mse_loss = torch.mean(squared_error)
-    return mse_loss
-
-loss = mse_loss_value + cross_entropy_loss
-```
 
 **Validation Loss for Squentropy**
 
