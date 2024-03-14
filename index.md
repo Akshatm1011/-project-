@@ -119,8 +119,6 @@ P(w) = exp( \frac{-1}{N} \sum_{i=1}^N \log P(w_{i}|w_1, w_2, ..., w_{i-1})) \\
 \end{equation}
 $$
 
-![](perplexity.png)
-
 **Cross Entropy Baseline**
 
 The standard loss function used in NLP token 
