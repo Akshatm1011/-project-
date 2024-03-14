@@ -111,7 +111,7 @@ Consider the following notation:
 * $w_{i}$ represents the i-th word in the test set
 * $P(w_{i}|w_1, w_2, ..., w_{i-1})$ is the probability assigned by the language model to the i-th token given the previous words
 
-Then, the \textit{perplexity} is defined as: 
+Then, the $\textit{perplexity}$ is defined as: 
 
 $$
 \begin{equation}
