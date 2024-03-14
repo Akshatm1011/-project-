@@ -158,22 +158,6 @@ def calculate_perplexity(model, device, num_batches):
     return perplexity
 ```
 
-**Cross Entropy Baseline**
-
-The standard loss function used in NLP token 
-prediction scenarios is cross-entropy. Our GPT-2 model
-trained on Tiny Stories performed well on simple
-cross-entropy without any hyper-paramter tuning.
-The model converged with around 1.8 loss value
-starting at around 10. The perplexity of the model
-is around 3.8 for the baseline using simple cross-
-entropy. The sampled text output using cross entropy was
-coherent sentences that made sense grammatically
-and plot wise. There was a initialization and a 
-conflict as well as an ending/cliamx. The cross entropy
-loss allowed the model to pick up the nuances in the
-training data and text.
-
 **Validation Loss for Cross Entropy**
 
 <p align="center">
@@ -243,7 +227,7 @@ It picks up the nuances in the tiny stories including a small plot with a confli
 
 **Discussion**
 
-During this process, we chose to depart from cross entropy loss and opt into squentropy loss in pursuit of better performance. When evaluating performance, perplexity is commonly used instead in addition to validation loss because perplexity indicates the model's effectiveness at predicting the next word in the sequence. Our tuned squentropy model performed decently well, achieving a perplexity of 5.2 and MSE loss of 1.899. However, the cross entropy model outperformed these results, achieving a perplexity (3.8) and validation loss of 1.83. Although the squentropy loss performed decently well (even by looking at the output, the sentences are very readable and look human generated), it is apparent that the cross entropy loss performs the best.
+During this process, we chose to depart from cross entropy loss and opt into squentropy loss in pursuit of better performance. When evaluating performance, perplexity is commonly used instead in addition to validation loss because perplexity indicates the model's effectiveness at predicting the next word in the sequence. Our tuned squentropy model performed decently well, achieving a perplexity of 5.2 and MSE loss of 1.899. However, the cross entropy model outperformed these results, achieving a perplexity (3.8) and validation loss of 1.83. Although the squentropy loss performed decently well (even by looking at the output, the sentences are very readable and look human generated), it is apparent that the cross entropy loss performs the best. The sampled text contains coherent sentences that made sense grammatically and plot wise. The cross entropy loss allowed the model to pick up the nuances in the training data and text.
 
 **Conclusions and Outlook**
 
