@@ -39,7 +39,7 @@ however, it too did not compare to the results of the
 cross entropy trained model. Finally, we combined the losses of
 mean squared error and cross-entropy to get the best results
 so far in terms of intelligibility. We have also hyper-parametered
-tuned our model to perform even better.
+tuned our model to be even more intelligibile.
 
 **Hyperparameter Tuning**
 
@@ -62,7 +62,7 @@ to train it. The most optimal hyperparameters found for squentropy are written b
 Upon completion of the training, perplexity was measured using a separate script. Perplexity
 measures how well a language model predicts or understands a given set
 of data, typically a sequence of words or tokens. The lower the perplex-
-ity, the better the model is at making accurate predictions. It quantifies how surprised or
+ity, the better the model will be at making accurate predictions. It quantifies how surprised or
 ”perplexed” the model would be on average when seeing a new word. The script calculated
 the perplexity for each story in the dataset, providing a comprehensive view of the model’s
 performance.
