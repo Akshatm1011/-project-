@@ -38,8 +38,8 @@ This seemed to improve our intelligibility in sentence structure
 however, it too did not compare to the results of the 
 cross entropy trained model. Finally, we combined the losses of
 mean squared error and cross-entropy to get the best results
-so far in terms of intelligibility but are in the process of 
-tuning hyperparameters to increase intelligibility.
+so far in terms of intelligibility. We have also hyper-parametered
+tuned our model to perform even better.
 
 **Hyperparameter Tuning**
 
