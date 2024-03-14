@@ -251,13 +251,8 @@ The current state of machine learning and natural language processing is heavily
 
 **References**
 
-[1] Hui, Mikhail, Belkin, M., & Wright, S., Cut your Losses
-with Squentropy, arXiv:2302.03952 [cs.LG] (2023).
-Available at: https://doi.org/10.48550/arXiv.2302.03952.
-[2] Hui, Mikhail, & Belkin, M., Evaluation of Neural
-Architectures Trained with Square Loss vs
-Cross-Entropy in Classification Tasks,
-arXiv:2006.07322 [cs.LG] (2021). An extended version
-published at ICLR2021 with added evaluations of
-Transformer architectures. Available at:
-https://arxiv.org/abs/2006.07322.
+Eldan, Ronen. 2023. "TinyStories." Hugging Face. [Link](https://huggingface.co/datasets/roneneldan/TinyStories)
+Karparthy, Andrej. 2023. "nanoGPT." GitHub. [Link](https://github.com/karpathy/nanoGPT)
+Like Hui, Stephen Wright, Mikhail Belkin. 2023. "Cut your Losses with Squentropy."
+Cornell University. [Link](https://arxiv.org/pdf/2302.03952.pdf)
+Madiraju, Priyanka. 2022. "Perplexity of Language Models." Medium. [Link](https://arxiv.org/pdf/2302.03952.pdf)https://arxiv.org/pdf/2302.03952.pdf
