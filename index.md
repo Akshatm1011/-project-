@@ -103,11 +103,44 @@ at making accurate predictions. It quantifies how surprised or "perplexed" the m
 be on average when seeing a new word. The script calculated the perplexity for each story in 
 the dataset, providing a comprehensive view of the model's performance.  
 
-The formula is shown below:  
-
-Consider the following notation:
-
 ![](perplexityequation.png)
+
+**Script For Perplexity Calculation**
+```python
+def calculate_perplexity(model, device, num_batches):
+    model.eval()
+    total_loss = 0
+    total_count = 0
+
+    with torch.no_grad():
+        for _ in range(num_batches):
+            inputs, targets = get_val_batch()
+            with ctx:
+                logits, loss = model(inputs, targets)
+            log_probs = F.log_softmax(logits, dim=-1)
+            
+            # Reshape log_probs and targets for calculating loss
+            # Flatten targets to [batch_size * sequence_length]
+            targets = targets.view(-1)
+            # Flatten log_probs to [batch_size * sequence_length,
+                    vocab_size]
+            log_probs = log_probs.view(-1, log_probs.size(-1))
+
+            # Calculate the loss
+            loss = F.nll_loss(log_probs, targets, reduction='sum')
+
+            # Adds to Total Loss
+            total_loss += loss.item()
+
+            # Counts number of target tokens
+            total_count += targets.numel() 
+
+    average_loss = total_loss / total_count
+
+    # Calculates Perplexity of Model
+    perplexity = np.exp(average_loss)
+    return perplexity
+```
 
 **Cross Entropy Baseline**
 
