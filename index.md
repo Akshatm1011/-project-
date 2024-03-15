@@ -14,8 +14,8 @@ model attempts to minimize and hyperparameters that can be tuned. In machine lea
 a model makes a prediction by choosing the input that minimizes a loss function. LLM’s
 traditionally use cross entropy Loss function, primarily because it is well-suited for tasks
 that generate probabilistic predictions (and classification tasks in general). The MSE loss
-function is typically utilized for regression tasks (It uses the residuals- the error between
-the predicted value and the actual value.). However, there is a way to utilize the MSE loss
+function is typically utilized for regression tasks by using the differnece between actual 
+and predicted values to calculate loss (residuals). However, there is a way to utilize the MSE loss
 function for our application. It involves predicting the next token in the sequence (choosing
 the token with the maximum probability of occurring) and comparing this token to the
 actual token. These residuals will be computed through vector algebra, and inputted into
