@@ -14,7 +14,7 @@ model attempts to minimize and hyperparameters that can be tuned. In machine lea
 a model makes a prediction by choosing the input that minimizes a loss function. LLM’s
 traditionally use cross entropy Loss function, primarily because it is well-suited for tasks
 that generate probabilistic predictions (and classification tasks in general). The MSE loss
-function is typically utilized for regression tasks by using the differnece between actual 
+function is typically utilized for regression tasks by using the difference between actual 
 and predicted values to calculate loss (residuals). However, there is a way to utilize the MSE loss
 function for our application. It involves predicting the next token in the sequence (choosing
 the token with the maximum probability of occurring) and comparing this token to the
@@ -22,11 +22,13 @@ actual token. These residuals will be computed through vector algebra, and input
 the loss function to compute a final metric. The goal is to implement this mathematical
 transformation into code, and evaluate the result on our dataset to see if the model performs
 better. This research aims to contribute to both the advancement of NanoGPT and other
-large language models in the field of natural language processing.
+large language models in the field of natural language processing by using a novel loss function
 
 **Dataset Description**
 
-There are multiple datasets that we would like to explore, but we will be using TinyStories. This dataset has 2.1M rows; each row consists of a short, structured narrative. This dataset differs from most datasets, as there is technically only one independent variable (the input paragraph). The data does not need to be necessarily cleaned (some grammar or punctuation might need to be handled, but nothing that requires too much attention). During the preparation process, the code utilizes tokenizers, transformers, and deep learning techniques to generate output text based on the input. The choice of dataset is actually not too important for this task, as there are many datasets of raw text data that can be used for NanoGPT training. However, the TinyStories dataset works particularly well because the dataset is large and contains many tokens that can be used in training. As far as limitations go, this dataset takes approximately 1 day to train when using a singular node with a singular GPU. (Runtime will be significantly reduced if we use Distributed Parallel Computing methods.) Even for our small scale NanoGPT infrastructure, running the model on this dataset requires much processing time.
+There are multiple datasets that we would like to explore, but we will be using TinyStories. This dataset has 2.1M rows; each row consists of a short, structured narrative. 
+This dataset differs from most datasets, as there is technically only one independent variable (the input paragraph). The data does not need to be necessarily cleaned (some grammar or punctuation might need to be handled, but nothing that requires too much attention). During the preparation process, the code utilizes tokenizers, transformers, and deep learning 
+techniques to generate output text based on the input. The choice of dataset is actually not too important for this task, as there are many datasets of raw text data that can be used for NanoGPT training. However, the TinyStories dataset works particularly well because the dataset is large and contains many tokens that can be used in training. As far as limitations go, this dataset takes approximately 1 day to train when using a singular node with a singular GPU. (Runtime will be significantly reduced if we use Distributed Parallel Computing methods.) Even for our small scale NanoGPT infrastructure, running the model on this dataset requires much processing time.
 
 **Mathematical Foundations**  
 
