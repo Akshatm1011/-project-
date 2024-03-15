@@ -4,6 +4,8 @@
 <sub>Project Mentors: Misha Belkin (mbelkin@ucsd.edu), Yian Ma (yianma@ucsd.edu)</sub>
 </center>
 
+**References and Links**  
+
 Report can be found [here](https://github.com/Akshatm1011/Optimizing-NanoGPT/blob/main/DSC180BFinalReport.pdf) <br>
 Poster can be found [here](https://github.com/Akshatm1011/Optimizing-NanoGPT/blob/main/poster.pdf)  <br>
 
